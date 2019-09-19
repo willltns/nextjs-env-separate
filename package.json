@@ -1,0 +1,47 @@
+{
+  "name": "nextjs-template",
+  "version": "1.0.0",
+  "description": "Nextjs with Redux & Antd & DllPlugin & Arbitrary .env...",
+  "scripts": {
+    "dll-pack": "webpack --config ./config/webpack.dll.config.js",
+    "dev": "cross-env STAGING=development node server.js",
+    "analyze": "cross-env BUNDLE_ANALYZE=browser STAGING=production next build",
+    "build": "cross-env STAGING=production next build",
+    "start": "cross-env NODE_ENV=production STAGING=production node server.js",
+    "deploy": "yarn install && yarn build && yarn start"
+  },
+  "author": "ltns",
+  "license": "ISC",
+  "dependencies": {
+    "@zeit/next-less": "1.0.1",
+    "antd": "3.23.2",
+    "axios": "0.19.0",
+    "babel-plugin-import": "1.12.1",
+    "babel-plugin-inline-react-svg": "1.1.0",
+    "cookie-parser": "1.4.4",
+    "copy-webpack-plugin": "5.0.4",
+    "cross-env": "5.2.1",
+    "dotenv": "8.1.0",
+    "express": "4.17.1",
+    "immer": "3.2.0",
+    "less": "3.10.3",
+    "next": "9.0.5",
+    "next-redux-wrapper": "3.0.0",
+    "null-loader": "3.0.0",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "react-redux": "7.1.1",
+    "redux": "4.0.4",
+    "redux-thunk": "2.3.0",
+    "webpack": "4.39.3",
+    "webpack-bundle-analyzer": "3.4.1"
+  },
+  "devDependencies": {
+    "assets-webpack-plugin": "3.9.10",
+    "clean-webpack-plugin": "3.0.0",
+    "http-proxy-middleware": "0.20.0",
+    "prettier": "1.18.2",
+    "redux-devtools-extension": "2.13.8",
+    "webpack-cli": "3.3.8"
+  }
+}
