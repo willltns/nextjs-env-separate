@@ -21,9 +21,7 @@ app.prepare().then(() => {
   // Set up the proxy.
   if (dev) {
     const proxyMiddleware = require('http-proxy-middleware')
-    Object.keys(devProxy).forEach(function(context) {
-      server.use(proxyMiddleware(context, devProxy[context]))
-    })
+    Object.entries(devProxy).forEach(([key, value]) => server.use(proxyMiddleware(key, value)))
   }
 
   server.use(cookieParser())

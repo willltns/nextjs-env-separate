@@ -14,9 +14,16 @@ export default function About(props) {
   return (
     <BaseLayout className="about-content">
       <h1>This is About page!</h1>
-      <Link href="/">
-        <a>to index</a>
-      </Link>
+
+      <nav>
+        <Link href="/">
+          <a>to index</a>
+        </Link>
+        <Link href="/post">
+          <a>to post</a>
+        </Link>
+      </nav>
+
       <Empty className="cus-empty" />
     </BaseLayout>
   )

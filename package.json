@@ -1,7 +1,7 @@
 {
   "name": "nextjs-template",
   "version": "1.0.0",
-  "description": "Nextjs with Redux & Antd & DllPlugin & Arbitrary .env...",
+  "description": "Nextjs with Redux & Immer & Antd & DllPlugin & Arbitrary .env.* & Proxy & Less...",
   "scripts": {
     "dll-pack": "webpack --config ./config/webpack.dll.config.js",
     "dev": "cross-env STAGING=development node server.js",
@@ -24,6 +24,7 @@
     "dotenv": "8.1.0",
     "express": "4.17.1",
     "immer": "3.2.0",
+    "js-cookie": "2.2.1",
     "less": "3.10.3",
     "next": "9.0.5",
     "next-redux-wrapper": "3.0.0",

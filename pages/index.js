@@ -23,11 +23,18 @@ export default function Index(props) {
   console.log('initialData~', initialData)
 
   return (
-    <BaseLayout>
-      <h1>This is Index page!{process.env.NEXT_APP_ENV_VARIABLE}</h1>
-      <Link href="/about">
-        <a>to about</a>
-      </Link>
+    <BaseLayout className="index-content">
+      <h1>This is Index page!</h1>
+
+      <nav>
+        <Link href="/about">
+          <a>to about</a>
+        </Link>
+
+        <Link href="/protect">
+          <a>to protect</a>
+        </Link>
+      </nav>
     </BaseLayout>
   )
 }

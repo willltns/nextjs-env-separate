@@ -1,25 +1,31 @@
 import React from 'react'
+import Link from 'next/link'
 
 import Warning from '../assets/svg/Warning.svg'
 
 import withAuth from '../components/hoc/with-auth'
 import BaseLayout from '../components/layout/base-layout'
-import Link from 'next/link'
 
-function Protect(props) {
+function Secret(props) {
   const iconData = 25
 
   return (
     <>
       <BaseLayout>
         <h1>
-          Protected page
+          Secret page
           <Warning className="warning-icon" />
         </h1>
 
-        <Link href="/secret">
-          <a>to secret</a>
-        </Link>
+        <nav>
+          <Link href="/protect">
+            <a>to protect</a>
+          </Link>
+
+          <Link href="/">
+            <a>to index</a>
+          </Link>
+        </nav>
       </BaseLayout>
 
       {/* --------------------------------styled-jsx-------------------------------- */}
@@ -28,6 +34,10 @@ function Protect(props) {
         h1 {
           display: flex;
           align-items: center;
+        }
+
+        h1 + nav > a:first-of-type {
+          margin-right: 50px;
         }
       `}</style>
 
@@ -42,4 +52,4 @@ function Protect(props) {
   )
 }
 
-export default withAuth(Protect)
+export default withAuth(Secret)
