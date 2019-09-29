@@ -12,7 +12,9 @@ const clientAuth = router => {
   if (Cookies.get('jwt')) return
   const { asPath, pathname, query } = router
   const tempQuery = { ...query }
-  // When routing dynamic routing like '/post/[id]', avoiding repeated dynamic value 'id' param added to href search.
+
+  // When routing dynamic routing like '/post/[id]',
+  // avoiding repeated dynamic value 'id' param added to href's queryString.
   const asRegx = /\[(\w*)\]/g
   let regxRes = null
   while ((regxRes = asRegx.exec(pathname))) delete tempQuery[regxRes[1]]
